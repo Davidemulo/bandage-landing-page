@@ -4,6 +4,7 @@ import { Hero } from './components/Hero/Hero'
 import { ProductSection } from './components/ProductSection/ProductSection'
 import { Services } from './components/Services/Services'
 import { FeaturedPosts } from './components/FeaturedPosts/FeaturedPosts'
+import { Testimonials } from './components/Testimonials/Testimonials'
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         <Services />
         
         <FeaturedPosts />
+
+        <Testimonials />
+
       </main>
     </>
   )
