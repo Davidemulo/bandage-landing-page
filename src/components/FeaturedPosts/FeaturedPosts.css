@@ -1,0 +1,45 @@
+.featuredPosts {
+  padding-block: 5rem;
+}
+
+.featuredPostsHeader {
+  margin-bottom: 3rem;
+
+  text-align: center;
+}
+
+.featuredPostsEyebrow {
+  margin: 0 0 0.5rem;
+
+  color: #23a6f0;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.featuredPostsTitle {
+  margin: 0;
+
+  color: #252b42;
+
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.featuredPostsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .featuredPosts {
+    padding-block: 6rem;
+  }
+
+  .featuredPostsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}

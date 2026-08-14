@@ -3,6 +3,7 @@ import { Header } from './components/layout/Header/Header'
 import { Hero } from './components/Hero/Hero'
 import { ProductSection } from './components/ProductSection/ProductSection'
 import { Services } from './components/Services/Services'
+import { FeaturedPosts } from './components/FeaturedPosts/FeaturedPosts'
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <ProductSection />
 
         <Services />
+        
+        <FeaturedPosts />
       </main>
     </>
   )
