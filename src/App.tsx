@@ -1,25 +1,20 @@
+import { AnnouncementBar } from './components/layout/AnnouncementBar/AnnouncementBar'
+import { Header } from './components/layout/Header/Header'
+
 function App() {
   return (
-    <main>
-      <section className="section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-label">
-              Featured Products
-            </span>
+    <>
+      <AnnouncementBar />
+      <Header />
 
-            <h1 className="section-title">
-              Bestseller Products
-            </h1>
-
-            <p className="section-description">
-              Problems trying to resolve the conflict between
-              products and customers.
-            </p>
+      <main>
+        <section className="section">
+          <div className="container">
+            <h1>E-Commerce Landing Page</h1>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   )
 }
 
