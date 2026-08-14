@@ -1,0 +1,99 @@
+.services {
+  padding-block: 5rem;
+}
+
+.servicesHeader {
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.servicesEyebrow {
+  margin: 0 0 0.5rem;
+
+  color: #737373;
+
+  font-size: 0.75rem;
+}
+
+.servicesTitle {
+  margin: 0 0 0.75rem;
+
+  color: #252b42;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.servicesDescription {
+  margin: 0;
+
+  color: #737373;
+
+  font-size: 0.625rem;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.serviceItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.serviceIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+}
+
+.serviceIcon img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.serviceTitle {
+  margin: 0 0 0.75rem;
+
+  color: #252b42;
+
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.serviceDescription {
+  max-width: 180px;
+  margin: 0;
+
+  color: #737373;
+
+  font-size: 0.625rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .services {
+    padding-block: 6rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}

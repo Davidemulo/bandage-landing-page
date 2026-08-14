@@ -2,6 +2,7 @@ import { AnnouncementBar } from './components/layout/AnnouncementBar/Announcemen
 import { Header } from './components/layout/Header/Header'
 import { Hero } from './components/Hero/Hero'
 import { ProductSection } from './components/ProductSection/ProductSection'
+import { Services } from './components/Services/Services'
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Hero />
 
         <ProductSection />
+
+        <Services />
       </main>
     </>
   )
