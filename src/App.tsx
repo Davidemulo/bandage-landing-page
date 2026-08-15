@@ -5,6 +5,7 @@ import { ProductSection } from './components/ProductSection/ProductSection'
 import { Services } from './components/Services/Services'
 import { FeaturedPosts } from './components/FeaturedPosts/FeaturedPosts'
 import { Testimonials } from './components/Testimonials/Testimonials'
+import { CtaSection } from './components/CtaSection/CtaSection'
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
         <FeaturedPosts />
 
         <Testimonials />
-
+        
+        <CtaSection />
       </main>
     </>
   )
