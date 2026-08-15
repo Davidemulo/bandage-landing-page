@@ -6,6 +6,7 @@ import { Services } from './components/Services/Services'
 import { FeaturedPosts } from './components/FeaturedPosts/FeaturedPosts'
 import { Testimonials } from './components/Testimonials/Testimonials'
 import { CtaSection } from './components/CtaSection/CtaSection'
+import { Footer } from './components/Footer/Footer'
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
         
         <CtaSection />
       </main>
+
+      <Footer />
     </>
   )
 }

@@ -1,0 +1,152 @@
+.footer {
+  background-color: #ffffff;
+}
+
+.footerTop {
+  padding-block: 2rem;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.footerBrandRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerLogo {
+  color: #252b42;
+
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.footerSocials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footerSocials a {
+  color: #23a6f0;
+
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.footerMain {
+  padding-block: 3rem;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.footerColumnTitle {
+  margin: 0 0 1.25rem;
+
+  color: #252b42;
+
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.footerLinks a {
+  color: #737373;
+
+  font-size: 0.5625rem;
+  font-weight: 700;
+}
+
+.footerForm {
+  margin: 0;
+}
+
+.footerInputGroup {
+  display: flex;
+
+  width: 100%;
+  max-width: 300px;
+}
+
+.footerInputGroup input {
+  min-width: 0;
+  flex: 1;
+
+  padding: 0.75rem;
+
+  border: 1px solid #dddddd;
+  border-right: 0;
+
+  outline: none;
+
+  font-family: inherit;
+  font-size: 0.5625rem;
+}
+
+.footerInputGroup button {
+  padding-inline: 1rem;
+
+  border: 1px solid #23a6f0;
+
+  background-color: #23a6f0;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 0.5625rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.footerFormNote {
+  margin: 0.5rem 0 0;
+
+  color: #737373;
+
+  font-size: 0.5rem;
+}
+
+.footerBottom {
+  padding-block: 1.5rem;
+
+  background-color: #fafafa;
+}
+
+.footerBottom p {
+  margin: 0;
+
+  color: #737373;
+
+  font-size: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .footerGrid {
+    grid-template-columns:
+      repeat(4, 1fr)
+      1.5fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .footerBrandRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
