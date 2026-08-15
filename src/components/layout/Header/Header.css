@@ -1,63 +1,431 @@
-.site-header {
-  background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-border);
+.siteHeader {
+  width: 100%;
+
+  background-color: #ffffff;
 }
 
-.site-header__inner {
+/* ========================================
+   Announcement Bar
+======================================== */
+
+.announcementBar {
+  width: 100%;
+
+  background-color: #23856d;
+}
+
+.announcementBarInner {
+  min-height: 3rem;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  min-height: 72px;
-  gap: var(--space-6);
+  gap: 1rem;
 }
 
-.site-header__logo {
-  flex-shrink: 0;
-
-  color: var(--color-primary);
-
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-}
-
-.site-header__nav {
-  display: none;
-  align-items: center;
-  gap: var(--space-6);
-}
-
-.site-header__nav a {
-  color: var(--color-text-secondary);
-
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-
-  transition:
-    color var(--transition-fast);
-}
-
-.site-header__nav a:hover {
-  color: var(--color-primary);
-}
-
-.site-header__actions {
+.announcementContact,
+.announcementSocial {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
 }
 
-.site-header__actions button {
-  padding: var(--space-2);
-
-  background: transparent;
-  color: var(--color-primary);
-
-  font-size: var(--font-size-sm);
+.announcementContact {
+  gap: 2rem;
 }
 
-@media (min-width: 768px) {
-  .site-header__nav {
+.announcementSocial {
+  gap: 0.2rem;
+}
+
+.announcementContact a,
+.announcementSocial a,
+.announcementSocial span,
+.announcementMessage {
+  color: #ffffff;
+
+  font-size: 0.625rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.announcementContact a,
+.announcementSocial a {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 4px;
+
+  text-decoration: none;
+}
+
+.announcementMessage {
+  margin: 0;
+
+  text-align: center;
+}
+
+.announcementIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+.announcementSocialIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+/* ========================================
+   Main Navigation
+======================================== */
+
+.mainNavigation {
+  position: relative;
+
+  width: 100%;
+
+  background-color: #ffffff;
+}
+
+.mainNavigationInner {
+  min-height: 4.5rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.siteHeaderLogo {
+  flex-shrink: 0;
+
+  color: #252b42;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+
+  text-decoration: none;
+}
+
+/* ========================================
+   Desktop Navigation
+======================================== */
+
+.siteHeaderNav {
+  display: flex;
+  align-items: center;
+
+  margin-left: 4rem;
+
+  gap: 1.5rem;
+}
+
+.siteHeaderNav a {
+  display: inline-flex;
+  align-items: center;
+
+  color: #737373;
+
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+.siteHeaderNav a:hover {
+  color: #252b42;
+}
+
+.shopLink {
+  gap: 0.25rem;
+}
+
+.shopChevronIcon {
+  width: 0.5rem;
+  height: 0.5rem;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+/* ========================================
+   Desktop Actions
+======================================== */
+
+.siteHeaderActions {
+  display: flex;
+  align-items: center;
+
+  margin-left: auto;
+
+  gap: 0.5rem;
+}
+
+.loginLink {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.35rem;
+
+  margin-right: 0.5rem;
+
+  color: #23a6f0;
+
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+.headerUserIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+.headerIconButton {
+  width: 2rem;
+  height: 2rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.headerIconButton:hover {
+  opacity: 0.75;
+}
+
+.headerIcon {
+  width: 1rem;
+  height: 1rem;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+/* ========================================
+   Mobile Header Actions
+======================================== */
+
+.mobileHeaderActions {
+  display: none;
+}
+
+.mobileHeaderIconButton {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.mobileHeaderIcon {
+  width: 1rem;
+  height: 1rem;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+/* ========================================
+   Mobile Hamburger
+======================================== */
+
+.mobileMenuButton {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+
+  padding: 0;
+
+  border: 0;
+
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.mobileMenuButton span {
+  width: 0.75rem;
+  height: 1px;
+
+  display: block;
+
+  background-color: #737373;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.mobileMenuButtonOpen span:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.mobileMenuButtonOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileMenuButtonOpen span:nth-child(3) {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* ========================================
+   Mobile Navigation
+======================================== */
+
+.mobileNavigation {
+  display: none;
+}
+
+/* ========================================
+   Tablet
+======================================== */
+
+@media (max-width: 900px) {
+  .siteHeaderNav {
+    margin-left: 2rem;
+
+    gap: 1rem;
+  }
+
+  .loginLink {
+    display: none;
+  }
+}
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media (max-width: 767px) {
+  /* Hide desktop announcement */
+
+  .announcementBar {
+    display: none;
+  }
+
+  /* Header */
+
+  .mainNavigationInner {
+    min-height: 4.5rem;
+
+    padding-inline: 1rem;
+  }
+
+  .siteHeaderLogo {
+    font-size: 1.25rem;
+  }
+
+  /* Hide desktop navigation */
+
+  .siteHeaderNav,
+  .siteHeaderActions {
+    display: none;
+  }
+
+  /* Show mobile actions */
+
+  .mobileHeaderActions {
+    margin-left: auto;
+
     display: flex;
+    align-items: center;
+
+    gap: 0.5rem;
+  }
+
+  /* Mobile menu */
+
+  .mobileNavigation {
+    display: block;
+
+    width: 100%;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    transition:
+      max-height 0.3s ease;
+  }
+
+  .mobileNavigationOpen {
+    max-height: 24rem;
+  }
+
+  .mobileNavigationLinks {
+    min-height: 15rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 1.5rem;
+
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+
+    border-left: 8px solid #252b42;
+  }
+
+  .mobileNavigationLinks a {
+    color: #737373;
+
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    text-decoration: none;
+  }
+
+  .mobileNavigationLinks a:hover {
+    color: #252b42;
   }
 }

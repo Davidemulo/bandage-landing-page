@@ -1,3 +1,9 @@
+import { Container } from '../common/Container/Container'
+
+import facebookIcon from '../../assets/icons/facebookBlue.svg'
+import instagramIcon from '../../assets/icons/instagramBlue.svg'
+import twitterIcon from '../../assets/icons/xBlue.svg'
+
 import './Footer.css'
 
 const footerColumns = [
@@ -42,92 +48,126 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="footerTop">
-        <div className="container footerBrandRow">
-          <a
-            href="/"
-            className="footerLogo"
-          >
-            Bandage
-          </a>
-
-          <div className="footerSocials">
-            <a href="#facebook" aria-label="Facebook">
-              f
+        <Container>
+          <div className="footerBrandRow">
+            <a
+              href="/"
+              className="footerLogo"
+              aria-label="Bandage home"
+            >
+              Bandage
             </a>
 
-            <a href="#instagram" aria-label="Instagram">
-              ◎
-            </a>
+            <div className="footerSocials">
+              <a
+                href="#facebook"
+                className="footerSocialLink"
+                aria-label="Facebook"
+              >
+                <img
+                  src={facebookIcon}
+                  alt=""
+                  className="footerSocialIcon"
+                />
+              </a>
 
-            <a href="#twitter" aria-label="Twitter">
-              ♥
-            </a>
+              <a
+                href="#instagram"
+                className="footerSocialLink"
+                aria-label="Instagram"
+              >
+                <img
+                  src={instagramIcon}
+                  alt=""
+                  className="footerSocialIcon"
+                />
+              </a>
+
+              <a
+                href="#twitter"
+                className="footerSocialLink"
+                aria-label="Twitter"
+              >
+                <img
+                  src={twitterIcon}
+                  alt=""
+                  className="footerSocialIcon"
+                />
+              </a>
+            </div>
           </div>
-        </div>
+        </Container>
       </div>
 
+      {/* Footer links */}
       <div className="footerMain">
-        <div className="container footerGrid">
-          {footerColumns.map((column) => (
-            <div
-              className="footerColumn"
-              key={column.title}
-            >
+        <Container>
+          <div className="footerGrid">
+            {footerColumns.map((column) => (
+              <div
+                className="footerColumn"
+                key={column.title}
+              >
+                <h2 className="footerColumnTitle">
+                  {column.title}
+                </h2>
+
+                <ul className="footerLinks">
+                  {column.links.map((link) => (
+                    <li key={link}>
+                      <a href={`#${link}`}>
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            {/* Newsletter */}
+            <div className="footerColumn footerNewsletter">
               <h2 className="footerColumnTitle">
-                {column.title}
+                Get In Touch
               </h2>
 
-              <ul className="footerLinks">
-                {column.links.map((link) => (
-                  <li key={link}>
-                    <a href={`#${link}`}>
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <form className="footerForm">
+                <label
+                  htmlFor="footerEmail"
+                  className="srOnly"
+                >
+                  Your Email
+                </label>
+
+                <div className="footerInputGroup">
+                  <input
+                    id="footerEmail"
+                    name="email"
+                    type="email"
+                    placeholder="Your Email"
+                    autoComplete="email"
+                  />
+
+                  <button type="submit">
+                    Subscribe
+                  </button>
+                </div>
+
+                <p className="footerFormNote">
+                  Lore ipsum dolor amit
+                </p>
+              </form>
             </div>
-          ))}
-
-          <div className="footerColumn">
-            <h2 className="footerColumnTitle">
-              Get In Touch
-            </h2>
-
-            <form className="footerForm">
-              <label
-                htmlFor="footerEmail"
-                className="srOnly"
-              >
-                Your Email
-              </label>
-
-              <div className="footerInputGroup">
-                <input
-                  id="footerEmail"
-                  type="email"
-                  placeholder="Your Email"
-                />
-
-                <button type="submit">
-                  Subscribe
-                </button>
-              </div>
-
-              <p className="footerFormNote">
-                Lore ipsum dolor amit
-              </p>
-            </form>
           </div>
-        </div>
+        </Container>
       </div>
 
+      {/* Copyright */}
       <div className="footerBottom">
-        <div className="container">
-          <p>
+        <Container>
+          <p className="footerCopyright">
             Made With Love By Finland All Right Reserved
           </p>
-        </div>
+        </Container>
       </div>
     </footer>
   )

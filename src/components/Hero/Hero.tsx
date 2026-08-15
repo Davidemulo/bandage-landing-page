@@ -21,7 +21,11 @@ function HeroCard({
   large = false,
 }: HeroCardProps) {
   return (
-    <article className={`heroCard ${large ? 'heroCardLarge' : ''}`}>
+    <article
+      className={`heroCard ${
+        large ? 'heroCardLarge' : ''
+      }`}
+    >
       <img
         src={image}
         alt=""
@@ -56,6 +60,7 @@ export function Hero() {
     >
       <Container>
         <div className="heroGrid">
+          {/* Large furniture card */}
           <HeroCard
             image={furnitureImage}
             items={5}
@@ -63,13 +68,16 @@ export function Hero() {
             large
           />
 
+          {/* Right side */}
           <div className="heroSide">
+            {/* Top plant card */}
             <HeroCard
               image={plantImage}
               items={5}
               title="Furniture"
             />
 
+            {/* Bottom two cards */}
             <div className="heroBottomGrid">
               <HeroCard
                 image={lampImage}
