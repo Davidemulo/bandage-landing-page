@@ -1,16 +1,20 @@
-# E-Commerce Landing Page
+# Bandage E-Commerce Landing Page
 
-A production-minded, responsive e-commerce landing page implemented from the provided Figma design.
+A responsive e-commerce landing page built from the provided Figma design as part of the Frontend Standardisation Task.
 
 The project demonstrates a clean React + TypeScript architecture, reusable components, Vanilla CSS, Redux Toolkit, RTK Query, responsive layout techniques, and paginated product loading from the DummyJSON Products API.
 
-> **Assessment scope:** This implementation focuses on the supplied landing-page experience. The complete checkout/cart flow is intentionally outside the current landing-page scope.
+> **Task scope:** This implementation focuses on the supplied landing-page experience. The complete checkout/cart flow is intentionally outside the current landing-page scope.
 
 ## Live Demo
 
-**Netlify:** _To be added after deployment_
+https://bandage-landing-page.netlify.app/
 
-[View the live application](#)
+---
+
+## Figma Link
+
+https://www.figma.com/design/HUkzK1qW7yP9rgX95P42dw/Product-card-task?node-id=539-11&t=d9F7GP3KBiG0iGhT-1
 
 ---
 
@@ -62,33 +66,13 @@ git --version
 
 ## Getting Started
 
-### 1. Clone the repository
+### Installation
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
-```
-
-### 2. Enter the project directory
-
-```bash
-cd ecommerce-landing-page
-```
-
-### 3. Install dependencies
-
-```bash
+git clone https://github.com/Davidemulo/bandage-landing-page.git
+cd bandage-landing-page
 npm install
 ```
-
-### 4. Start the development server
-
-```bash
-npm run dev
-```
-
-Vite will provide the local development URL in the terminal.
-
-## Available Scripts
 
 ### Development
 
@@ -96,34 +80,18 @@ Vite will provide the local development URL in the terminal.
 npm run dev
 ```
 
-Starts the Vite development server with hot module replacement.
-
-### Production build
+### Production Build
 
 ```bash
 npm run build
 ```
 
-Creates an optimized production build in the `dist` directory.
-
-### Preview production build
+### Preview Production Build
 
 ```bash
 npm run preview
 ```
 
-Serves the generated production build locally for final verification.
-
-## Production Build Verification
-
-Before deployment:
-
-```bash
-npm run build
-npm run preview
-```
-
-The application should be checked using the production build rather than relying only on the development server.
 
 ## API Integration
 
@@ -432,37 +400,7 @@ The shared `Container` component prevents inconsistent max-width and horizontal-
 - Product pagination uses the API response metadata rather than a hard-coded number of pages.
 - No frontend UI framework is used for styling.
 
-## Deployment
 
-The application is intended for deployment on Netlify.
-
-### Netlify configuration
-
-```text
-Build command:
-npm run build
-
-Publish directory:
-dist
-```
-
-### Deploy using Netlify Git integration
-
-1. Push the repository to GitHub, GitLab, or Bitbucket.
-2. Create/import a site in Netlify.
-3. Select the repository.
-4. Select the production branch.
-5. Set the build command to `npm run build`.
-6. Set the publish directory to `dist`.
-7. Deploy.
-
-### Production URL
-
-Replace this placeholder after deployment:
-
-```text
-https://<YOUR-NETLIFY-SITE>.netlify.app
-```
 
 ## Deployment Checklist
 
@@ -515,26 +453,6 @@ Potential future improvements include:
 - Image optimization
 - CI checks for type checking and production builds
 
-## Final Verification
-
-Before submission:
-
-```bash
-npm install
-npm run build
-npm run preview
-```
-
-Then verify:
-
-- Browser console
-- Network requests
-- Responsive breakpoints
-- Image loading
-- API failure behavior
-- Product pagination
-- Keyboard navigation
-- Production deployment
 
 ## License
 
