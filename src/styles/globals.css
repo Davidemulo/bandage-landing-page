@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-/* Box sizing */
+
 *,
 *::before,
 *::after {
@@ -80,6 +80,7 @@ select {
 button {
   border: 0;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 

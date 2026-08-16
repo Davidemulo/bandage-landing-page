@@ -1,11 +1,12 @@
 import { Header } from './components/layout/Header/Header'
-import { Hero } from './components/Hero/Hero'
-import { ProductSection } from './components/ProductSection/ProductSection'
-import { Services } from './components/Services/Services'
-import { FeaturedPosts } from './components/FeaturedPosts/FeaturedPosts'
-import { Testimonials } from './components/Testimonials/Testimonials'
-import { CtaSection } from './components/CtaSection/CtaSection'
-import { Footer } from './components/Footer/Footer'
+import { Hero } from './sections/Hero/Hero'
+import { ProductSection } from './sections/ProductSection/ProductSection'
+import { Services } from './sections/Services/Services'
+import { FeaturedPosts } from './features/posts/FeaturedPosts/FeaturedPosts'
+import { Testimonials } from './sections/Testimonials/Testimonials'
+import { CtaSection } from './sections/CtaSection/CtaSection'
+import { Footer } from './components/layout/Footer/Footer'
+import { BasketModal } from './components/common/BasketModal/BasketModal'
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Hero />
 
         <ProductSection />
+
+        <BasketModal />
 
         <Services />
         

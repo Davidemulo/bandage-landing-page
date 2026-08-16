@@ -3,7 +3,7 @@ import concreteIcon from '../../assets/icons/concrete.svg'
 import hackGrowthIcon from '../../assets/icons/hackGrowth.svg'
 
 
-import { Container } from '../common/Container/Container'
+import { Container } from '../../components/common/Container/Container'
 
 import './Services.css'
 

@@ -12,6 +12,10 @@ import cartIcon from '../../../assets/icons/cart.svg'
 import heartIcon from '../../../assets/icons/heart.svg'
 import arrowDownIcon from '../../../assets/icons/arrowDown.svg'
 
+import {
+  useAppSelector,
+} from '../../../app/hooks'
+
 import { Container } from '../../common/Container/Container'
 
 import './Header.css'
@@ -19,6 +23,14 @@ import './Header.css'
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] =
     useState(false)
+
+  const cartCount = useAppSelector(
+    (state) => state.shop.cart.length,
+  )
+
+  const wishlistCount = useAppSelector(
+    (state) => state.shop.wishlist.length,
+  )
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((current) => !current)
@@ -30,12 +42,9 @@ export function Header() {
 
   return (
     <header className="siteHeader">
-      {/* ========================================
-          Announcement Bar
-      ======================================== */}
 
       <div className="announcementBar">
-        <Container>
+        <Container variant="header">
           <div className="announcementBarInner">
             <div className="announcementContact">
               <a href="tel:2255550118">
@@ -116,16 +125,13 @@ export function Header() {
         </Container>
       </div>
 
-      {/* ========================================
-          Main Navigation
-      ======================================== */}
-
       <nav
         className="mainNavigation"
         aria-label="Primary navigation"
       >
-        <Container>
+        <Container variant="header">
           <div className="mainNavigationInner">
+
             {/* Logo */}
 
             <a
@@ -167,6 +173,7 @@ export function Header() {
             {/* Desktop Actions */}
 
             <div className="siteHeaderActions">
+
               <a
                 href="#login"
                 className="loginLink"
@@ -192,34 +199,52 @@ export function Header() {
                 />
               </button>
 
+              {/* Cart */}
+
               <button
                 type="button"
-                className="headerIconButton"
-                aria-label="Shopping cart"
+                className="headerIconButton headerIconButtonWithBadge"
+                aria-label={`Shopping cart, ${cartCount} items`}
               >
                 <img
                   src={cartIcon}
                   alt=""
                   className="headerIcon"
                 />
+
+                {cartCount > 0 && (
+                  <span className="headerIconBadge">
+                    {cartCount}
+                  </span>
+                )}
               </button>
+
+              {/* Wishlist */}
 
               <button
                 type="button"
-                className="headerIconButton"
-                aria-label="Wishlist"
+                className="headerIconButton headerIconButtonWithBadge"
+                aria-label={`Wishlist, ${wishlistCount} items`}
               >
                 <img
                   src={heartIcon}
                   alt=""
                   className="headerIcon"
                 />
+
+                {wishlistCount > 0 && (
+                  <span className="headerIconBadge">
+                    {wishlistCount}
+                  </span>
+                )}
               </button>
+
             </div>
 
             {/* Mobile Actions */}
 
             <div className="mobileHeaderActions">
+
               <button
                 type="button"
                 className="mobileHeaderIconButton"
@@ -234,14 +259,20 @@ export function Header() {
 
               <button
                 type="button"
-                className="mobileHeaderIconButton"
-                aria-label="Shopping cart"
+                className="mobileHeaderIconButton mobileHeaderIconButtonWithBadge"
+                aria-label={`Shopping cart, ${cartCount} items`}
               >
                 <img
                   src={cartIcon}
                   alt=""
                   className="mobileHeaderIcon"
                 />
+
+                {cartCount > 0 && (
+                  <span className="mobileHeaderIconBadge">
+                    {cartCount}
+                  </span>
+                )}
               </button>
 
               <button
@@ -263,6 +294,7 @@ export function Header() {
                 <span />
                 <span />
               </button>
+
             </div>
           </div>
         </Container>

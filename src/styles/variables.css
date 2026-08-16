@@ -1,6 +1,6 @@
 :root {
 
-    /* Colors */
+  
   --color-primary: #1d2a44;
   --color-primary-dark: #172238;
 
@@ -23,7 +23,7 @@
   --color-border: #e5e7eb;
 
 
-    /* Typography */
+  
     --font-family-base:
     'Montserrat',
     sans-serif;
@@ -45,7 +45,7 @@
     --line-height-normal: 1.5;
     --line-height-relaxed: 1.7;
 
-    /* Spacing */
+  
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -60,19 +60,17 @@
   --space-24: 6rem;
 
 
-    /* Layout */  
-  --container-width: 1200px;
+  --header-container-width: 1360px;
+  --content-container-width: 1200px;
   --container-padding: 1.25rem;
 
-    
-  /* Border Radius */  
+     
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-full: 9999px;
 
 
-    /* Shadows */
   --shadow-sm:
     0 1px 3px rgb(0 0 0 / 0.08);
 
@@ -80,7 +78,6 @@
     0 4px 12px rgb(0 0 0 / 0.1);
     
   
-    /* Transitions */
   --transition-fast: 150ms ease;
   --transition-normal: 250ms ease;
 }

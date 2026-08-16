@@ -1,15 +1,15 @@
-import postOneImage from '../../assets/images/posts/postOne.jpg'
-import postTwoImage from '../../assets/images/posts/postTwo.jpg'
-import postThreeImage from '../../assets/images/posts/postThree.jpg'
+import postOneImage from '../../../assets/images/posts/postOne.jpg'
+import postTwoImage from '../../../assets/images/posts/postTwo.jpg'
+import postThreeImage from '../../../assets/images/posts/postThree.jpg'
 
-import { Container } from '../common/Container/Container'
+import { Container } from '../../../components/common/Container/Container'
 import { PostCard } from '../PostCard/PostCard'
 
 import './FeaturedPosts.css'
 
 type Post = {
   image: string
-  category: string
+  categories: string[]
   title: string
   description: string
   date: string
@@ -19,28 +19,28 @@ type Post = {
 const posts: Post[] = [
   {
     image: postOneImage,
-    category: 'Google',
-    title: 'Loudest à la Madison #1',
+    categories: ['Google', 'Trending', 'New'],
+    title: 'Loudest à la Madison #1 (L’Integral)',
     description:
-      'We focus on ergonomics and meeting you where you work.',
+      'We focus on ergonomics and meeting you where you work. It’s only a keystroke away.',
     date: '22 April 2021',
     comments: 10,
   },
   {
     image: postTwoImage,
-    category: 'Trending',
-    title: 'Loudest à la Madison #2',
+    categories: ['Google', 'Trending', 'New'],
+    title: 'Loudest à la Madison #1 (L’Integral)',
     description:
-      'We focus on ergonomics and meeting you where you work.',
+      'We focus on ergonomics and meeting you where you work. It’s only a keystroke away.',
     date: '22 April 2021',
     comments: 10,
   },
   {
     image: postThreeImage,
-    category: 'Trending',
-    title: 'Loudest à la Madison #3',
+    categories: ['Google', 'Trending', 'New'],
+    title: 'Loudest à la Madison #1 (L’Integral)',
     description:
-      'We focus on ergonomics and meeting you where you work.',
+      'We focus on ergonomics and meeting you where you work. It’s only a keystroke away.',
     date: '22 April 2021',
     comments: 10,
   },
@@ -63,7 +63,7 @@ export function FeaturedPosts() {
         <div className="featuredPostsGrid">
           {posts.map((post) => (
             <PostCard
-              key={post.title}
+              key={post.image}
               {...post}
             />
           ))}

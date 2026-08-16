@@ -3,7 +3,7 @@ import plantImage from '../../assets/images/hero/plant.png'
 import lampImage from '../../assets/images/hero/lamp.png'
 import decorImage from '../../assets/images/hero/decor.png'
 
-import { Container } from '../common/Container/Container'
+import { Container } from '../../components/common/Container/Container'
 
 import './Hero.css'
 
@@ -60,7 +60,6 @@ export function Hero() {
     >
       <Container>
         <div className="heroGrid">
-          {/* Large furniture card */}
           <HeroCard
             image={furnitureImage}
             items={5}
@@ -68,16 +67,16 @@ export function Hero() {
             large
           />
 
-          {/* Right side */}
+          
           <div className="heroSide">
-            {/* Top plant card */}
+           
             <HeroCard
               image={plantImage}
               items={5}
               title="Furniture"
             />
 
-            {/* Bottom two cards */}
+            
             <div className="heroBottomGrid">
               <HeroCard
                 image={lampImage}

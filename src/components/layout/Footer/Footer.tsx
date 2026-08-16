@@ -1,8 +1,8 @@
-import { Container } from '../common/Container/Container'
+import { Container } from '../../common/Container/Container'
 
-import facebookIcon from '../../assets/icons/facebookBlue.svg'
-import instagramIcon from '../../assets/icons/instagramBlue.svg'
-import twitterIcon from '../../assets/icons/xBlue.svg'
+import facebookIcon from '../../../assets/icons/facebookBlue.svg'
+import instagramIcon from '../../../assets/icons/instagramBlue.svg'
+import twitterIcon from '../../../assets/icons/xBlue.svg'
 
 import './Footer.css'
 

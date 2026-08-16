@@ -1,0 +1,207 @@
+.postCard {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  min-width: 0;
+
+  background-color: var(--color-white);
+
+  border: 1px solid #eeeeee;
+
+  box-shadow:
+    0 2px 4px rgb(0 0 0 / 8%);
+}
+
+.postCardImageWrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1.35;
+
+  overflow: hidden;
+}
+
+.postCardImage {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform var(--transition-normal);
+}
+
+.postCard:hover .postCardImage {
+  transform: scale(1.03);
+}
+
+.postCardBadge {
+  position: absolute;
+
+  top: 0.75rem;
+  left: 0.75rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 2rem;
+  height: 1.5rem;
+
+  padding-inline: 0.5rem;
+
+  color: var(--color-white);
+  border-radius: 3px;
+
+  background-color: #e74040;
+
+  font-size: 0.5625rem;
+  font-weight: var(--font-weight-bold);
+
+  line-height: 1;
+
+  box-shadow:
+    0 2px 4px rgb(0 0 0 / 12%);
+}
+
+.postCardContent {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 1.5rem 1.25rem 1.25rem;
+}
+
+.postCardCategories {
+  display: flex;
+  align-items: center;
+
+  gap: 0.625rem;
+
+  margin-bottom: 0.625rem;
+}
+
+.postCardCategory {
+  color: #737373;
+
+  font-size: 0.5625rem;
+  font-weight: var(--font-weight-regular);
+
+  line-height: 1.4;
+}
+
+.postCardCategoryActive {
+  color: var(--color-accent);
+}
+
+.postCardTitle {
+  max-width: 16rem;
+
+  margin: 0 0 0.75rem;
+
+  color: var(--color-primary);
+
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.4;
+}
+
+.postCardDescription {
+  max-width: 17rem;
+
+  margin: 0 0 1.25rem;
+
+  color: #737373;
+
+  font-size: 0.625rem;
+  font-weight: var(--font-weight-regular);
+  line-height: 1.6;
+}
+
+.postCardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 0.75rem;
+
+  margin-top: auto;
+  margin-bottom: 1.25rem;
+}
+
+.postCardMetaItem {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.35rem;
+
+  color: #737373;
+
+  font-size: 0.5625rem;
+  font-weight: var(--font-weight-regular);
+
+  white-space: nowrap;
+}
+
+.postCardMetaIcon {
+  display: inline-block;
+
+  width: 0.75rem;
+  height: 0.75rem;
+
+  flex-shrink: 0;
+}
+
+.postCardLink {
+  display: inline-flex;
+  align-items: center;
+
+  align-self: flex-start;
+
+  gap: 0.5rem;
+
+  color: var(--color-primary);
+
+  font-size: 0.625rem;
+  font-weight: var(--font-weight-semibold);
+
+  text-decoration: none;
+
+  transition:
+    color var(--transition-fast);
+}
+
+.postCardLink:hover {
+  color: var(--color-accent);
+}
+
+.postCardLinkIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-accent);
+
+  font-size: 1rem;
+  font-weight: var(--font-weight-regular);
+
+  line-height: 1;
+}
+
+@media (max-width: 767px) {
+  .postCardContent {
+    padding: 1.25rem 1rem;
+  }
+
+  .postCardMeta {
+    justify-content: flex-start;
+
+    gap: 1rem;
+  }
+}

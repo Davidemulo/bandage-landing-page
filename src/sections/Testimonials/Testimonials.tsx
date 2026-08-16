@@ -9,7 +9,7 @@ import gallerySeven from '../../assets/images/testimonials/gallerySeven.jpg'
 import galleryEight from '../../assets/images/testimonials/galleryEight.jpg'
 import galleryNine from '../../assets/images/testimonials/galleryNine.jpg'
 
-import { Container } from '../common/Container/Container'
+import { Container } from '../../components/common/Container/Container'
 
 import './Testimonials.css'
 

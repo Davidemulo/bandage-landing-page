@@ -4,8 +4,8 @@ import { useLazyGetProductsQuery } from '../../services/productsApi'
 
 import type { Product } from '../../types/product'
 
-import { Container } from '../common/Container/Container'
-import { ProductCard } from '../ProductCard/ProductCard'
+import { Container } from '../../components/common/Container/Container'
+import { ProductCard } from '../../features/ProductCard/ProductCard'
 
 import './ProductSection.css'
 
