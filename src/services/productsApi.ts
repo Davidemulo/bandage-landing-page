@@ -3,7 +3,9 @@ import {
   fetchBaseQuery,
 } from '@reduxjs/toolkit/query/react'
 
-import type { ProductsResponse } from '../types/product'
+import type {
+  ProductsResponse,
+} from '../types/product'
 
 export const productsApi = createApi({
   reducerPath: 'productsApi',
@@ -13,12 +15,25 @@ export const productsApi = createApi({
   }),
 
   endpoints: (builder) => ({
-    getProducts: builder.query<ProductsResponse, void>({
-      query: () => 'products?limit=10',
+    getProducts: builder.query<
+      ProductsResponse,
+      {
+        limit: number
+        skip: number
+      }
+    >({
+      query: ({ limit, skip }) => ({
+        url: 'products',
+        params: {
+          limit,
+          skip,
+        },
+      }),
     }),
   }),
 })
 
 export const {
   useGetProductsQuery,
+  useLazyGetProductsQuery,
 } = productsApi

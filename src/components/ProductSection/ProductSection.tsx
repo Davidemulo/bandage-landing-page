@@ -1,63 +1,69 @@
-import { useGetProductsQuery } from '../../services/productsApi'
+import { useEffect, useState } from 'react'
+
+import { useLazyGetProductsQuery } from '../../services/productsApi'
+
+import type { Product } from '../../types/product'
 
 import { Container } from '../common/Container/Container'
 import { ProductCard } from '../ProductCard/ProductCard'
 
 import './ProductSection.css'
 
+const productsPerPage = 8
+
 export function ProductSection() {
-  const {
-    data,
-    isLoading,
-    isError,
-  } = useGetProductsQuery()
+  const [products, setProducts] = useState<Product[]>([])
+  const [skip, setSkip] = useState(0)
 
-  if (isLoading) {
-    return (
-      <section className="productSection">
-        <Container>
-          <div className="productSectionHeader">
-            <p className="sectionEyebrow">
-              Featured Products
-            </p>
+  const [
+    fetchProducts,
+    {
+      data,
+      isFetching,
+      isError,
+    },
+  ] = useLazyGetProductsQuery()
 
-            <h2 className="sectionTitle">
-              Bestseller Products
-            </h2>
+  useEffect(() => {
+    fetchProducts({
+      limit: productsPerPage,
+      skip: 0,
+    })
+  }, [fetchProducts])
 
-            <p className="sectionDescription">
-              Problems trying to resolve the conflict between
-            </p>
-          </div>
+  useEffect(() => {
+    if (!data) {
+      return
+    }
 
-          <p className="productSectionMessage">
-            Loading products...
-          </p>
-        </Container>
-      </section>
-    )
-  }
+    setProducts((currentProducts) => {
+      if (data.skip === 0) {
+        return data.products
+      }
 
-  if (isError || !data) {
-    return (
-      <section className="productSection">
-        <Container>
-          <div className="productSectionHeader">
-            <p className="sectionEyebrow">
-              Featured Products
-            </p>
+      return [
+        ...currentProducts,
+        ...data.products,
+      ]
+    })
+  }, [data])
 
-            <h2 className="sectionTitle">
-              Bestseller Products
-            </h2>
-          </div>
+  const hasMoreProducts =
+    products.length < (data?.total ?? 0)
 
-          <p className="productSectionMessage">
-            Unable to load products. Please try again.
-          </p>
-        </Container>
-      </section>
-    )
+  const handleLoadMore = async () => {
+    if (isFetching || !hasMoreProducts) {
+      return
+    }
+
+    const nextSkip = skip + productsPerPage
+
+    setSkip(nextSkip)
+
+    await fetchProducts({
+      limit: productsPerPage,
+      skip: nextSkip,
+    })
   }
 
   return (
@@ -76,25 +82,49 @@ export function ProductSection() {
           </h2>
 
           <p className="sectionDescription">
-            Problems trying to resolve the conflict between
+            Problems trying to resolve the conflict
+            between
           </p>
         </header>
 
-        <div className="productGrid">
-          {data.products.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-            />
-          ))}
-        </div>
+        {isError && products.length === 0 && (
+          <p className="productSectionMessage">
+            Unable to load products. Please try
+            again.
+          </p>
+        )}
 
-        <button
-          type="button"
-          className="loadMoreButton"
-        >
-          Load More Products
-        </button>
+        {products.length > 0 && (
+          <>
+            <div className="productGrid">
+              {products.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                />
+              ))}
+            </div>
+
+            {hasMoreProducts && (
+              <button
+                type="button"
+                className="loadMoreButton"
+                onClick={handleLoadMore}
+                disabled={isFetching}
+              >
+                {isFetching
+                  ? 'Loading...'
+                  : 'Load More Products'}
+              </button>
+            )}
+          </>
+        )}
+
+        {isFetching && products.length === 0 && (
+          <p className="productSectionMessage">
+            Loading products...
+          </p>
+        )}
       </Container>
     </section>
   )
